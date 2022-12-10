@@ -2,7 +2,7 @@ import java.util.*;
 
 public class myMain {
 
-    //Object
+    //ObjectPogemons
     static myPogemons poge1 = new myPogemons();
     static myPogemons poge2 = new myPogemons();
 
@@ -34,6 +34,7 @@ public class myMain {
         mainMenu();
 
     }
+
 
     //Menu
     public static void mainMenu(){

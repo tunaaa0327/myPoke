@@ -6,8 +6,6 @@ public class myPogemons {
 
     static Scanner userInput = new Scanner(System.in);
 
-    static int caught=0;
-
     //variables
     String namePoki, skillOne, skillTwo, stun="";
 
@@ -48,7 +46,6 @@ public class myPogemons {
         }else {
             System.out.println("You have successfully catch "+myMain.poge2.namePoki);
             myMain.poge2.HP=10;
-            caught=1;
             myMain.mainMenu();
         }
     }
