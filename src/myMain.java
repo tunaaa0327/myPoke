@@ -11,10 +11,10 @@ public class myMain {
     //Variables
     static Scanner userInput = new Scanner(System.in);
     static Random random = new Random();
-    static String choice="2";
+    static String choice="2", userName;
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         //Pokémon #1 Attributes
         poge1.namePoki = "Pikachu";
@@ -31,6 +31,11 @@ public class myMain {
         poge2.MP = 10;
 
         System.out.println("Welcome to Pogemon");
+        System.out.println("Please enter trainer name: ");
+        userName = userInput.next();
+        System.out.println("Welcome "+userName+" to the world of Pogemon!");
+        System.out.println("My name is Oak! People call me the pogemon Prof!\nThis world is inhabited by creatures called Pogemon!");
+        System.out.println("I will give you " + poge1.namePoki + " as your pogemon\nYou have no choice!\nNow go explore the world of Pogemon");
         mainMenu();
 
     }
