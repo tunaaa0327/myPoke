@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class myPogemon {
+public class myPogemons {
 
     static Random random = new Random();
 

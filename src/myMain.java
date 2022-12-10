@@ -3,8 +3,8 @@ import java.util.*;
 public class myMain {
 
     //Object
-    static myPogemon poge1 = new myPogemon();
-    static myPogemon poge2 = new myPogemon();
+    static myPogemons poge1 = new myPogemons();
+    static myPogemons poge2 = new myPogemons();
 
 
 
