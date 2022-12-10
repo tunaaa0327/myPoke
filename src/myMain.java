@@ -31,28 +31,33 @@ public class myMain {
         poge2.MP = 10;
 
         System.out.println("Welcome to Pogemon");
+        mainMenu();
 
-        //Menu
-        System.out.println();
-        while (!choice.equals("3")) {
-            System.out.println("[1]Move\n[2]Rest\n[3]Quit\nChoose your Option: ");
-            choice = userInput.next();
-            switch (choice) {
-                case "1" -> Move();
-                case "2" -> Rest();
-                case "3" -> System.out.println("Thank You For playing Pogemon");
-                default -> System.out.println("No Error Trapping");
-            }
-        }//End_Menu
     }
 
-
+    //Menu
+    public static void mainMenu(){
+            System.out.println();
+            while (!choice.equals("3")) {
+                System.out.println("[1]Move\n[2]Rest\n[3]Quit\nChoose your Option: ");
+                choice = userInput.next();
+                switch (choice) {
+                    case "1" -> Move();
+                    case "2" -> Rest();
+                    case "3" -> System.out.println("Thank You For playing Pogemon");
+                    default -> {
+                        System.out.println("No Error Trapping");
+                        mainMenu();
+                    }
+                }
+            }
+    }//End_Menu
 
 
     //Move
     public static void Move() {
         System.out.println();
-        if (random.nextInt(1, 10) <= 4) {
+        if (random.nextInt(1, 10) <6) {
             System.out.println("You have move " + choice + " blocks");
         }else{
             System.out.println("You have encountered a wild " + poge2.namePoki);
@@ -76,10 +81,12 @@ public class myMain {
         if (poge1.HP == 20) {
             System.out.println("\n"+poge1.namePoki + " is already in full health");
             System.out.println();
+            mainMenu();
         } else {
             poge1.HP = 20;
             poge1.MP = 10;
             System.out.println("\n"+poge1.namePoki + " has restored its health and mana" + "\nHP: " + poge1.HP + "\nMP:" + poge1.MP);
+            mainMenu();
         }
     }
 

@@ -49,6 +49,7 @@ public class myPogemons {
             System.out.println("You have successfully catch "+myMain.poge2.namePoki);
             myMain.poge2.HP=10;
             caught=1;
+            myMain.mainMenu();
         }
     }
 
@@ -79,7 +80,7 @@ public class myPogemons {
         System.out.println();
         System.out.println(namePoki + " uses " + skillOne);
         if (random.nextInt(1, 10) < 5) {
-            choice = random.nextInt(3, 4);
+            choice = random.nextInt(3, 5);
             myMain.poge2.HP -= choice;
             System.out.println(skillOne + " has dealt critical damage");
             System.out.println(myMain.poge2.namePoki + " has received damage of " + choice);
@@ -128,8 +129,10 @@ public class myPogemons {
             if(myMain.poge2.HP<=10){
                 myMain.poge2.HP=10;
                 System.out.println("You have killed " + myMain.poge2.namePoki);
+                myMain.mainMenu();
             }else {
                 noHP();
+                myMain.mainMenu();
             }
         }
 
