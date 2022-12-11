@@ -14,8 +14,7 @@ public class myPogemons {
     //Methods
     //Attack Option
     public void Attack() {
-        System.out.println();
-        System.out.println("Choose " + namePoki + " skills\n[1]" + skillOne + "\n[2]" + skillTwo + "\nOther");
+        System.out.println("\nChoose " + namePoki + " skills\n[1]" + skillOne + "\n[2]" + skillTwo + "\nOther");
         System.out.println("[3]Use Pogé Ball\nChoose Option: ");
         choice = userInput.nextInt();
         switch (choice) {
@@ -52,8 +51,7 @@ public class myPogemons {
 
     public void SkillOne(){
         MP -= 1;
-        System.out.println();
-        System.out.println(namePoki + " uses " + skillOne);
+        System.out.println("\n"+namePoki + " uses " + skillOne);
         if (random.nextInt(1, 10) < 5) {
             choice = random.nextInt(3, 5);
             myMain.poge2.HP -= choice;
@@ -73,8 +71,7 @@ public class myPogemons {
 
     public void SkillTwo(){
         MP -= 1;
-        System.out.println();
-        System.out.println(namePoki + " uses " + skillTwo);
+        System.out.println("\n"+namePoki + " uses " + skillTwo);
         if (random.nextInt(0, 3) < 1) {
             System.out.println(myMain.poge2.namePoki + " Feels dizzy");
             Enemy();
@@ -96,12 +93,11 @@ public class myPogemons {
             System.out.println(myMain.poge2.namePoki + " uses " + myMain.poge2.skillTwo);
             System.out.println(namePoki + " has received damage of 1");
         }
-        System.out.println();
         Health();
     }
 
     public void Health(){
-        System.out.println(namePoki + "\nHP: " + HP + "\nMP: " + MP);
+        System.out.println("\n"+namePoki + "\nHP: " + HP + "\nMP: " + MP);
         System.out.println(myMain.poge2.namePoki + "\nHP: " + myMain.poge2.HP);
         CaseHP();
     }

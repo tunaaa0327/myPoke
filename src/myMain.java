@@ -2,6 +2,20 @@ import java.util.*;
 
 public class myMain {
 
+    /*Todo
+    Micro Methods
+        *Normal
+        *Critical
+        *Stunned
+        *Continuous Damage
+    Use
+        Different Pokemon
+        Caught Pokemon
+    Leveling System
+    Inventory
+        Healing & Mana Potion
+    */
+
     //ObjectPogemons
     static myPogemons poge1 = new myPogemons();
     static myPogemons poge2 = new myPogemons();
@@ -19,14 +33,14 @@ public class myMain {
     public static void main(String[] args){
         String userName;
         //Pokémon #1 Attributes
-        poge1.namePoki = "Pihachu";
+        poge1.namePoki = "Pigachu";
         poge1.skillOne = "Thunderbolt";
         poge1.skillTwo = "Static";
         poge1.HP = 20;
         poge1.MP = 10;
 
         //Pogémon #2 Attributes
-        poge2.namePoki = "Snorckle";
+        poge2.namePoki = "Snorlacking";
         poge2.skillTwo = "Smash";
         poge2.skillOne = "Stump";
         poge2.HP = 10;
@@ -87,8 +101,7 @@ public class myMain {
     //Rest
     public static void Rest(){
         if (poge1.HP == 20) {
-            System.out.println("\n"+poge1.namePoki + " is already in full health");
-            System.out.println();
+            System.out.println("\n"+poge1.namePoki + " is already in full health\n");
             mainMenu();
         } else {
             poge1.HP = 20;
