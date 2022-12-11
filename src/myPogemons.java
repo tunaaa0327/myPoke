@@ -10,12 +10,10 @@ public class myPogemons {
     String namePoki, skillOne, skillTwo, stun="";
 
     int HP, MP, choice;
-    //Methods
 
+    //Methods
     //Attack Option
     public void Attack() {
-        noHP();
-        noMP();
         System.out.println();
         System.out.println("Choose " + namePoki + " skills\n[1]" + skillOne + "\n[2]" + skillTwo + "\nOther");
         System.out.println("[3]Use Pogé Ball\nChoose Option: ");
@@ -35,6 +33,7 @@ public class myPogemons {
             Enemy();
         }else {
             System.out.println("You have successfully to runaway from "+myMain.poge2.namePoki);
+            myMain.mainMenu();
         }
     }
 
@@ -50,27 +49,6 @@ public class myPogemons {
         }
     }
 
-
-
-
-    //Conditions
-    public void Enemy(){
-        if (random.nextInt(1, 3) == 1) {
-            myMain.poge1.HP -= 1;
-            System.out.println(myMain.poge2.namePoki + " uses " + myMain.poge2.skillOne);
-            System.out.println(namePoki + " has received damage of 1");
-        } else {
-            myMain.poge1.HP -= 1;
-            System.out.println(myMain.poge2.namePoki + " uses " + myMain.poge2.skillTwo);
-            System.out.println(namePoki + " has received damage of 1");
-        }System.out.println();
-        Health();
-        Attack();
-    }
-    public void Health(){
-        System.out.println(namePoki + "\nHP: " + HP + "\nMP: " + MP);
-        System.out.println(myMain.poge2.namePoki + "\nHP: " + myMain.poge2.HP);
-    }
 
     public void SkillOne(){
         MP -= 1;
@@ -88,7 +66,6 @@ public class myPogemons {
             System.out.println(myMain.poge2.namePoki+ " can't moved due to static" );
             stun = "no";
             Health();
-            Attack();
         }else {
             Enemy();
         }
@@ -101,37 +78,48 @@ public class myPogemons {
         if (random.nextInt(0, 3) < 1) {
             System.out.println(myMain.poge2.namePoki + " Feels dizzy");
             Enemy();
-            Attack();
         } else {
             System.out.println(myMain.poge2.namePoki + " is stunned");
             stun = "yes";
             Attack();
         }
-
     }
 
-    public void Potion(){
-
+    //Conditions
+    public void Enemy(){
+        if (random.nextInt(1, 3) == 1) {
+            myMain.poge1.HP -= 1;
+            System.out.println(myMain.poge2.namePoki + " uses " + myMain.poge2.skillOne);
+            System.out.println(namePoki + " has received damage of 1");
+        } else {
+            myMain.poge1.HP -= 1;
+            System.out.println(myMain.poge2.namePoki + " uses " + myMain.poge2.skillTwo);
+            System.out.println(namePoki + " has received damage of 1");
+        }
+        System.out.println();
+        Health();
     }
 
-    //Cases
-    public void noMP() {
-        if (MP <= 0) {
-            System.out.println(namePoki + " has not enough Mana Point");
+    public void Health(){
+        System.out.println(namePoki + "\nHP: " + HP + "\nMP: " + MP);
+        System.out.println(myMain.poge2.namePoki + "\nHP: " + myMain.poge2.HP);
+        CaseHP();
+    }
+
+    public void CaseHP(){
+        //Cases
+        if(myMain.poge2.HP<=0){
+            myMain.poge2.HP=10;
+            System.out.println("You have defeated " + myMain.poge2.namePoki);
+            myMain.mainMenu();
+        }else if(myMain.poge1.HP<=0){
+            System.out.println("Your "+namePoki+ "has been defeated");
+            myMain.mainMenu();
+        }else {
+            Attack();
         }
     }
 
-    public void noHP(){
-        if (HP <= 0) {
-            if(myMain.poge2.HP<=10){
-                myMain.poge2.HP=10;
-                System.out.println("You have killed " + myMain.poge2.namePoki);
-                myMain.mainMenu();
-            }else {
-                noHP();
-                myMain.mainMenu();
-            }
-        }
 
-    }
+
 }
